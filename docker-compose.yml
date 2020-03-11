@@ -1,0 +1,14 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.5-alpine
+    container_name: postgres-smigic
+    environment:
+      - POSTGRES_USER=smigic
+      - POSTGRES_PASSWORD=smigic
+      - POSTGRES_DB=smigicdb
+      - PGDATA=/tmp
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres-db:/var/lib/postgresql/data
